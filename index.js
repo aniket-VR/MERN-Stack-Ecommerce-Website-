@@ -22,7 +22,7 @@ connectMongodb(process.env.DB_URL).then(() => {
 });
 app.use(
   cors({
-    origin: "*", // Allow all origins
+    origin: ["http://localhost:5173"], // Allow all origins
     methods: ["GET", "POST", "PUT", "DELETE"], // Allow specific methods
     allowedHeaders: ["Content-Type", "Authorization"],
   })
