@@ -20,7 +20,13 @@ app.use(cookieparser());
 connectMongodb(process.env.DB_URL).then(() => {
   console.log("connected");
 });
-app.use(cors());
+app.use(
+  cors({
+    origin: "*", // Allow all origins
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allow specific methods
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 app.use(express.static(path.join(__dirname, "./frontend/build")));
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use("/card", routers);
