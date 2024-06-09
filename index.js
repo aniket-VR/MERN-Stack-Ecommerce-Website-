@@ -41,9 +41,9 @@ app.use("/", (req, res) => {
     data: "aniket",
   };
 });
-app.use("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./frontend/build/index.html"));
-});
+// app.use("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./frontend/build/index.html"));
+// });
 app.listen(process.env.PORT || 5000, () => {
   console.log("server started", 5000);
 });
